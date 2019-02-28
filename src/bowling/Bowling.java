@@ -36,7 +36,7 @@ public class Bowling {
         Boolean gotSpare = false;
         Boolean got2Strikes = false;
         Scanner myObj = new Scanner(System.in);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 10; i++) {
             if (turn == 1) {
                 gotSpare = false;
                 gotStrike = false;
@@ -208,105 +208,105 @@ public class Bowling {
                 gotSpare = false;
                 System.out.println("/next round is " + round);
             }
+            // got a strike
+            if (turn == 2 && gotStrike == true) {
+                System.out.println("second bowl in round " + round + "after strike");
+                System.out.println("gotStrike is " + gotStrike);
+                String bowl3 = myObj.nextLine();
+                if (bowl3.matches(strike)) {
+                    System.out.println("you got a strike");
+                    score = score + 10;
+                    System.out.println("gotStrike is now " + gotStrike);
+                }
+                if (bowl3.matches(miss)) {
+                    System.out.println("you missed");
+                    score = score + 0;
+                }
+                if (bowl3.matches(val1)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+                if (bowl3.matches(val2)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+                if (bowl3.matches(val3)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+                if (bowl3.matches(val4)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+                if (bowl3.matches(val5)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+                if (bowl3.matches(val6)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+                if (bowl3.matches(val7)) {
+                    score = score + Integer.parseInt(bowl3);
+
+                }
+                if (bowl3.matches(val8)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+                if (bowl3.matches(val9)) {
+                    score = score + Integer.parseInt(bowl3);
+                }
+
+                System.out.println("Xyour score is " + score);
+                System.out.println("Xround is " + round);
+                System.out.println("Xnext round is " + round);
+                turn = 3;
+            }
+            //third roll after a strike
+            if (turn == 3) {
+                System.out.println("X_third bowl in round " + round + " after strike");
+                String bowl2 = myObj.nextLine();
+                if (bowl2.matches(strike)) {
+                    System.out.println("you got a strike");
+                    score = score + 10;
+                }
+                if (bowl2.matches(miss)) {
+                    System.out.println("you missed");
+                    score = score + 0;
+                }
+                if (bowl2.matches(val1)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val2)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val3)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val4)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val5)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val6)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val7)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val8)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+                if (bowl2.matches(val9)) {
+                    score = score + Integer.parseInt(bowl2);
+                }
+
+                System.out.println("X_your score is " + score);
+                System.out.println("X_round is " + round);
+                round = round + 1;
+                turn = 1;
+
+                System.out.println("X_next round is " + round);
+                System.out.println("X_next turn is " + turn);
+            }
         }
-        // got a strike
-        if (turn == 2 && gotStrike == true) {
-            System.out.println("second bowl in round " + round + "after strike");
-            System.out.println("gotStrike is " + gotStrike);
-            String bowl3 = myObj.nextLine();
-            if (bowl3.matches(strike)) {
-                System.out.println("you got a strike");
-                score = score + 10;
-                System.out.println("gotStrike is now " + gotStrike);
-            }
-            if (bowl3.matches(miss)) {
-                System.out.println("you missed");
-                score = score + 0;
-            }
-            if (bowl3.matches(val1)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-            if (bowl3.matches(val2)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-            if (bowl3.matches(val3)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-            if (bowl3.matches(val4)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-            if (bowl3.matches(val5)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-            if (bowl3.matches(val6)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-            if (bowl3.matches(val7)) {
-                score = score + Integer.parseInt(bowl3);
 
-            }
-            if (bowl3.matches(val8)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-            if (bowl3.matches(val9)) {
-                score = score + Integer.parseInt(bowl3);
-            }
-
-            System.out.println("Xyour score is " + score);
-            System.out.println("Xround is " + round);
-            System.out.println("Xnext round is " + round);
-            turn = 3;
-        }
-        //third roll after a strike
-        if (turn == 3) {
-            System.out.println("third bowl in round " + round + "after strike");
-            String bowl2 = myObj.nextLine();
-            if (bowl2.matches(strike)) {
-                System.out.println("you got a strike");
-                score = score + 10;
-            }
-            if (bowl2.matches(miss)) {
-                System.out.println("you missed");
-                score = score + 0;
-            }
-            if (bowl2.matches(val1)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val2)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val3)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val4)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val5)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val6)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val7)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val8)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-            if (bowl2.matches(val9)) {
-                score = score + Integer.parseInt(bowl2);
-            }
-
-            System.out.println("X_your score is " + score);
-            System.out.println("X_round is " + round);
-            round = round + 1;
-            turn = 1;
-           
-            System.out.println("X_next round is " + round);
-            System.out.println("X_next turn is " + turn);
-        }
-
-        if (round > 3) {
+        if (round > 10) {
             System.out.println("the game is over");
             System.out.println("Your final score is: " + score);
         }
