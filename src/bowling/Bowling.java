@@ -38,11 +38,13 @@ public class Bowling {
         Boolean round10strike = false;
         Boolean round10spare = false;
         Scanner myObj = new Scanner(System.in);
+        System.out.println("let's play bowlng");
         for (int i = 0; i < 10; i++) {
             if (turn == 1) {
                 gotSpare = false;
                 gotStrike = false;
                 got2Strikes = false;
+                System.out.println("round10spare starts as " + round10spare);
                 System.out.println("first bowl in round " + round);
 
                 String bowl = myObj.nextLine();
@@ -112,9 +114,6 @@ public class Bowling {
                     gotSpare = true;
                     System.out.println("turn is " + turn);
                     turn = 2;
-                    if (round == 10){
-                        round10spare = true;
-                    }
                 }
                 if (bowl.matches(miss)) {
                     System.out.println("you missed");
@@ -166,6 +165,13 @@ public class Bowling {
                     score = score + Integer.parseInt(bowl);
                     round = round + 1;
                     turn = 1;
+                }
+                if (round == 10 && gotSpare == true) {
+                     System.out.println("test");
+                    System.out.println("gotSpare is" + gotSpare);
+                    round10spare = true;
+                    System.out.println("round10spare is" + round10spare);
+                    //last round spare logic goes here?
                 }
             }
 
@@ -312,6 +318,7 @@ public class Bowling {
                         if (bowl.matches(spare)) {
                             System.out.println("you got a spare");
                             score = score + 10;
+                            gotSpare = true;
                         }
                         if (bowl.matches(miss)) {
                             System.out.println("you missed");
@@ -351,9 +358,9 @@ public class Bowling {
                     }
                 }
                 //round 10 spare bonus
-                if (round10spare = true){
-                    System.out.println("bonus spare");
-                }
+//                if (round10spare == true) {
+//                    System.out.println("bonus spare round10spare is " + round10spare);
+//                }
             }
         }
 
