@@ -39,6 +39,7 @@ public class Bowling {
         Boolean round10spare = false;
         Scanner myObj = new Scanner(System.in);
         System.out.println("let's play bowlng");
+        //start the game
         for (int i = 0; i < 10; i++) {
             if (turn == 1) {
                 gotSpare = false;
@@ -166,11 +167,8 @@ public class Bowling {
                     turn = 1;
                 }
                 if (round == 10 && gotSpare == true) {
-                    System.out.println("test");
-                    System.out.println("gotSpare is" + gotSpare);
                     round10spare = true;
-                    System.out.println("round10spare is" + round10spare);
-                    //last round spare logic goes here?
+//                    go on to spare bonus in last round
                 }
             }
 
@@ -178,6 +176,7 @@ public class Bowling {
             if (turn == 2 && gotSpare == true) {
 //                System.out.println("third bowl in round " + round + " after spare");
                 if (round10spare == true) {
+                    //bonus in the last round for spare
                         System.out.println("2 bonus turns left");
                         String bowl = myObj.nextLine();
                         if (bowl.matches(strike)) {
@@ -187,7 +186,6 @@ public class Bowling {
                         if ( turn != 1 && bowl.matches(spare)) {
                             System.out.println("you got a spare");
                             score = score + 10;
-//                            gotSpare = true;
                         }
                         if (bowl.matches(miss)) {
                             System.out.println("you missed");
@@ -225,8 +223,8 @@ public class Bowling {
                         if (turn == 1) {
                             round = 11;
                         }
-                    //}
                 }
+                //not the last round
                 String bowl = myObj.nextLine();
                 if (bowl.matches(strike)) {
                     System.out.println("you got a strike");
@@ -406,10 +404,6 @@ public class Bowling {
                         }
                     }
                 }
-                //round 10 spare bonus
-//                if (round10spare == true) {
-//                    System.out.println("bonus spare round10spare is " + round10spare);
-//                }
             }
         }
 
