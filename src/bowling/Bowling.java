@@ -177,52 +177,52 @@ public class Bowling {
 //                System.out.println("third bowl in round " + round + " after spare");
                 if (round10spare == true) {
                     //bonus in the last round for spare
-                        System.out.println("2 bonus turns left");
-                        String bowl = myObj.nextLine();
-                        if (bowl.matches(strike)) {
-                            System.out.println("you got a strike");
-                            score = score + 10;
-                        }
-                        if ( turn != 1 && bowl.matches(spare)) {
-                            System.out.println("you got a spare");
-                            score = score + 10;
-                        }
-                        if (bowl.matches(miss)) {
-                            System.out.println("you missed");
-                            score = score + 0;
-                        }
-                        if (bowl.matches(val1)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val2)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val3)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val4)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val5)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val6)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val7)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val8)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        if (bowl.matches(val9)) {
-                            score = score + Integer.parseInt(bowl);
-                        }
-                        turn = turn - 1;
-                        System.out.println("1 bonus turn left");
-                        if (turn == 1) {
-                            round = 11;
-                        }
+                    System.out.println("2 bonus turns left");
+                    String bowl = myObj.nextLine();
+                    if (bowl.matches(strike)) {
+                        System.out.println("you got a strike");
+                        score = score + 10;
+                    }
+                    if (turn != 1 && bowl.matches(spare)) {
+                        System.out.println("you got a spare");
+                        score = score + 10;
+                    }
+                    if (bowl.matches(miss)) {
+                        System.out.println("you missed");
+                        score = score + 0;
+                    }
+                    if (bowl.matches(val1)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val2)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val3)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val4)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val5)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val6)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val7)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val8)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    if (bowl.matches(val9)) {
+                        score = score + Integer.parseInt(bowl);
+                    }
+                    turn = turn - 1;
+                    System.out.println("1 bonus turn left");
+                    if (turn == 1) {
+                        round = 11;
+                    }
                 }
                 //not the last round
                 String bowl = myObj.nextLine();
@@ -407,6 +407,7 @@ public class Bowling {
             }
         }
 
+//end the game
         if (round > 10) {
             System.out.println("the game is over");
             System.out.println("Your final score is: " + score);
