@@ -87,7 +87,6 @@ public class Bowling {
                     score = score + Integer.parseInt(bowl);
                 }
                 System.out.println("your score is " + score);
-//                turn = turn + 1;
                 if (round == 10 && round10strike == true) {
                     turn = 4;
                 } else {
@@ -113,15 +112,10 @@ public class Bowling {
                     gotSpare = true;
                     System.out.println("turn is " + turn);
                     turn = 2;
+                    if (round == 10){
+                        round10spare = true;
+                    }
                 }
-//                if (bowl.matches(spare) && round == 10) {
-//                    System.out.println("you got a spare in round 10");
-//                    score = score + 10;
-//                    gotSpare = true;
-//                    round10spare = true;
-//                    System.out.println("round10spare " + round10spare);
-//                    turn = 3;
-//                }
                 if (bowl.matches(miss)) {
                     System.out.println("you missed");
                     score = score + 0;
@@ -355,6 +349,10 @@ public class Bowling {
                             round = 11;
                         }
                     }
+                }
+                //round 10 spare bonus
+                if (round10spare = true){
+                    System.out.println("bonus spare");
                 }
             }
         }
