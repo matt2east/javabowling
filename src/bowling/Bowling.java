@@ -176,16 +176,15 @@ public class Bowling {
 
             // got a spare
             if (turn == 2 && gotSpare == true) {
-                System.out.println("third bowl in round " + round + " after spare");
+//                System.out.println("third bowl in round " + round + " after spare");
                 if (round10spare == true) {
-                        System.out.println("bonus turns left");
-                        turn = 2;
+                        System.out.println("2 bonus turns left");
                         String bowl = myObj.nextLine();
                         if (bowl.matches(strike)) {
                             System.out.println("you got a strike");
                             score = score + 10;
                         }
-                        if (bowl.matches(spare)) {
+                        if ( turn != 1 && bowl.matches(spare)) {
                             System.out.println("you got a spare");
                             score = score + 10;
 //                            gotSpare = true;
